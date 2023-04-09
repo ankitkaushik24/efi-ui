@@ -1,0 +1,52 @@
+<header class="flex gap-2 items-center h-16 shadow-sm overflow-hidden">
+    <p-button
+            icon="pi pi-bars"
+            styleClass="p-button-rounded p-button-text p-button-raised"
+    >
+    </p-button>
+    <span>Radius</span>
+
+    <span class="flex-1"></span>
+
+    <div class="flex p-inputgroup rounded-full basis-64 overflow-clip">
+        <div class="p-input-icon-right">
+            <input
+                    class="w-full rounded-r-none"
+                    pInputText
+                    placeholder="Keyword"
+                    style="--border-radius: 999px"
+                    type="text"
+            />
+            <i class="pi pi-search"></i>
+        </div>
+        <button
+                icon="pi pi-cog"
+                pButton
+                styleClass="p-button-text p-button-warn"
+                type="button"
+        ></button>
+    </div>
+</header>
+
+<aside>
+    <a class="logo inline-block w-16 h-14 py-2">
+        <img
+                alt="logo"
+                class="w-full h-full object-contain"
+                src="../../favicon.png"
+        />
+    </a>
+    <nav>
+        <ul>
+            <li *ngFor="let item of navItems" [pTooltip]="item.text">
+                <a [routerLink]="item.link" routerLinkActive="active">
+                    <i class="pi {{ item.icon }}"></i>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</aside>
+
+<main class="overflow-hidden">
+    <router-outlet></router-outlet>
+</main>

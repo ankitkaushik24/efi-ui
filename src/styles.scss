@@ -1,0 +1,32 @@
+@import "assets/theme.css";
+@import "primeng/resources/primeng.css";
+@import "primeicons/primeicons.css";
+
+@tailwind utilities;
+
+:root {
+  font-size: 12px;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+ul,
+ol,
+dt,
+dd,
+h3 {
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  list-style: none;
+}

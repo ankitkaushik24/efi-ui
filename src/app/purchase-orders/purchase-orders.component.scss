@@ -1,0 +1,39 @@
+:host {
+  display: flex;
+  padding: 0.5rem;
+  background-color: #f5f6fa;
+  height: 100%;
+  flex-direction: column;
+}
+
+efi-folder-tile {
+  &[data-id="sales"] {
+    --card-rgb: 81, 133, 247;
+  }
+
+  &[data-id="completed"] {
+    --card-rgb: 140, 213, 65;
+    --icon-color: #fff;
+    background-color: rgb(var(--card-rgb));
+    color: #fff;
+  }
+
+  &[data-id="authorised"] {
+    --card-rgb: 85, 214, 190;
+  }
+
+  &[data-id="onHold"] {
+    --card-rgb: 253, 205, 111;
+  }
+}
+
+.orders-container {
+  padding: 1rem;
+  box-shadow: 0 0 2px 1px #00000033;
+  background: #fff;
+  border-radius: var(--border-radius);
+  flex: 1;
+  height: 0;
+  flex-direction: column;
+  display: flex;
+}

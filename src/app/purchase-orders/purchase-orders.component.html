@@ -1,0 +1,41 @@
+<h3>Purchase orders</h3>
+<div class="flex items-center py-2">
+    <ul class="inline-flex gap-2">
+        <li *ngFor="let tag of orderTags">
+            <p-tag [rounded]="true" [value]="tag.display"></p-tag>
+        </li>
+    </ul>
+
+    <p-button
+            class="ml-auto"
+            icon="pi pi-plus"
+            label="Create new report"
+            styleClass="p-button-sm"
+    ></p-button>
+</div>
+<section
+        *ngIf="purchaseOrdersData$ | async as purchaseOrderData"
+        class="orders-container"
+>
+    <ul class="flex gap-5 mb-4">
+        <li *ngFor="let stat of statCards" class="basis-48">
+            <efi-folder-tile
+                    [attr.data-id]="stat.identifier"
+                    [icon]="stat.icon"
+                    [label]="stat.label"
+                    [value]="purchaseOrderData[stat.identifier]"
+            ></efi-folder-tile>
+        </li>
+        <li>
+            <p-button
+                    icon="pi pi-ellipsis-v"
+                    styleClass="p-button-rounded p-button-text p-button-raised p-button-sm"
+            >
+            </p-button>
+        </li>
+    </ul>
+
+    <efi-purchase-orders-data-table
+            [orders]="purchaseOrderData['orders']"
+    ></efi-purchase-orders-data-table>
+</section>
